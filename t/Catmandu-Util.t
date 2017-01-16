@@ -460,6 +460,7 @@ is Catmandu::Util::data_at('foo.$last', {foo => [qw(bar bar2 bar3)]}),
         'data_at 6';
     is_deeply $data , {foo => [qw(0 1 2), undef]}, 'data_at 6';
 }
+is Catmandu::Util::data_at('foo\.bar', {'foo.bar' => 'xyz'}), 'xyz', 'data_at 7';
 
 ok Catmandu::Util::array_exists([qw(0 1 2)], 0), 'array_exists 1';
 ok !Catmandu::Util::array_exists([qw(0 1 2)], 3), '!array_exists';
